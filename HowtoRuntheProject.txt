@@ -1,0 +1,21 @@
+Open VScode
+In Terminal execute below to Start your backend server
+python -m uvicorn MediAssist:app --reload
+You will get below message
+Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [36640] using WatchFiles
+INFO:     Started server process [18624]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+
+Open the index.html in browser
+Used USwagger UI
+
+Open:
+
+👉 http://127.0.0.1:8000/docs
+To check the Get and POST response
+When testing
+in VScode you should see the message 
+INFO:     127.0.0.1:61800 - "OPTIONS /triage HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61800 - "POST /triage HTTP/1.1" 200 OK
