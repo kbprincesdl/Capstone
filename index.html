@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Triage Chat</title>
+</head>
+<body>
+
+<h2>AI Assistant</h2>
+
+<input type="text" id="message" placeholder="Enter your query" />
+<button onclick="sendMessage()">Submit</button>
+
+<p id="result"></p>
+
+<script>
+async function sendMessage() {
+    const msg = document.getElementById("message").value;
+
+    const response = await fetch("http://127.0.0.1:8000/triage", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: msg })
+    });
+
+    const data = await response.json();
+
+    document.getElementById("result").innerText =
+        "Intent: " + data.intent + " | Response: " + data.response;
+}
+</script>
+
+</body>
+</html>
